@@ -26,6 +26,15 @@ public:
         }
     }
 };
+class SuperCar : public Car
+{
+public:
+    int horsepower;
+    SuperCar(Car _car, int _horsepower) : Car(_car.manufacturer, _car.model, _car.wheels)
+    {
+        horsepower = _horsepower;
+    }
+};
 
 class Book
 {
@@ -67,9 +76,9 @@ int main()
 
     Car tesla = Car("Tesla", "Model Y", false);
     Car porsche = Car("Porsche", "911", true);
-
+    SuperCar koenigsegg(Car("koenigsegg", "1:1", true), 1000);
     printcar(tesla);
     printcar(porsche);
-
+    printcar(koenigsegg);
     return 0;
 }
